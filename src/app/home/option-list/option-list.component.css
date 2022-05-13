@@ -1,0 +1,14 @@
+.items-color{
+    background-color: #40515d!important;
+    color: white
+}
+
+.margin-container{
+	margin-top: 10%
+}
+
+@media (max-width: 450px){
+	.margin-container{
+		margin-top: 0px
+	}
+}
