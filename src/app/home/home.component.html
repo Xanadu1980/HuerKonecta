@@ -47,16 +47,14 @@
 		        <a class="nav-link" routerLink="/home/activities" title="Actividades" (click)="collapseHide()" ><i class="fa fa-list-alt fa-2x"></i></a>
 		      </li>
 
-			  <li class="nav-item margin-li">
-		        <a class="nav-link" routerLink="/home/task" title="Tareas" (click)="collapseHide()" ><i class="fa fa-list-ol fa-2x"></i></a>
-		      </li>
-
 		      <li class="nav-item dropdown margin-li">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          <i class="fa fa-user-circle fa-2x"></i>
 		        </a>
 		        <div class="dropdown-menu dropdown-menu-responsive" aria-labelledby="navbarDropdownMenuLink">
 		          <a class="dropdown-item" (click)="Gotoprofile()"><i class="fa fa-user-circle"></i> Perfil</a>
+		          <a class="dropdown-item" routerLink="/home/task"><i class="fa fa-list-ol"></i> Mis Tareas</a>
+		          <a class="dropdown-item" routerLink="/home/tramites"><i class="fa fa-archive"></i> Mis Tramites</a>
 		          <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
 		        </div>
 		      </li>

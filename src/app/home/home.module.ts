@@ -20,9 +20,10 @@ import { ActivityComponent } from './activity/activity.component';
 import { TaskComponent } from './task/task.component';
 import { OptionListComponent } from './option-list/option-list.component';
 import { PartnersComponent } from './partners/partners.component';
+import { TramitesComponent } from './tramites/tramites.component';
 
 @NgModule({
-  declarations: [HomeComponent, PostComponent, AboutComponent, ContactUsComponent, TeamComponent, ProfileComponent, CommentComponent, ActivityComponent, TaskComponent, OptionListComponent, PartnersComponent],
+  declarations: [HomeComponent, PostComponent, AboutComponent, ContactUsComponent, TeamComponent, ProfileComponent, CommentComponent, ActivityComponent, TaskComponent, OptionListComponent, PartnersComponent, TramitesComponent],
   imports: [
     CommonModule,
     FormsModule,

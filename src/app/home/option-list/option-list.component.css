@@ -4,11 +4,11 @@
 }
 
 .margin-container{
-	margin-top: 8%
+	margin-top: 9%
 }
 
 #post-option{
-  height: 50vh;
+  height: 40vh;
   background-image: url("https://previews.123rf.com/images/vadimgozhda/vadimgozhda1412/vadimgozhda141201624/35457820-c%C3%ADrculo-de-la-confianza-grupo-de-personas-que-est%C3%A1n-sentados-en-c%C3%ADrculo-y-se-apoyan-mutuamente-.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 }
 
 #activities-option{
-  height: 50vh;
+  height: 40vh;
   background-image: url("http://www.entreperiodistas.com/wp-content/uploads/2019/06/oficina-personas-trabajando-en-computadores.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@
 }
 
 #tasks-option{
-  height: 50vh;
+  height: 40vh;
   background-image: url("https://hablemosdeempresas.com/wp-content/uploads/sites/2/2020/03/lista-tareas-portada.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 }
 
 #profile-option{
-  height: 50vh;
+  height: 40vh;
   background-image: url("https://app-sapumu.sfo2.digitaloceanspaces.com/cihuatlan/user/2021/10/16859/gzMLhSxLqA.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -76,6 +76,25 @@
 }
 
 #profile-option:hover {
+  -webkit-transform:scale(0.98);
+  -moz-transform:scale(0.98);
+  -ms-transform:scale(0.98);
+  -o-transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+#tramites-option{
+  height: 40vh;
+  background-image: url("https://miro.medium.com/max/1400/1*b3KYGwRDsHF_5eL1cC66pA.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 1px #0096dbab !important;
+  background-position: top;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#tramites-option:hover {
   -webkit-transform:scale(0.98);
   -moz-transform:scale(0.98);
   -ms-transform:scale(0.98);
@@ -98,4 +117,11 @@
 	.margin-container{
 		margin-top: 0px
 	}
+}
+
+@media (max-width: 768px) {
+  .font-letters-titles{
+    font-size: 14px;
+    font-family: fantasy;
+  }
 }

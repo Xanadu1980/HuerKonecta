@@ -1,6 +1,6 @@
 <ng-template #postContent let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">Agendar</h4>
+        <h4 class="modal-title">Agendar Solicitud</h4>
 
         <button type="button" class="close" aria-label="Close" (click)="d('Cerrar')">
             <span aria-hidden="true">&times;</span>
@@ -24,7 +24,7 @@
 	                </div>
 
 	                <div class="form-group text-left">
-	                  <label for="fechaPut">Fecha de Actividad</label>
+	                  <label for="fechaPut">Fecha de su solicitud</label>
 	                  <input type="date" class="form-control input-lg" name="" id="fechaPut" formControlName="Fecha">
 	                </div>
 
@@ -38,8 +38,11 @@
 					  <input type="time" class="form-control input-lg" name="" id="horaFinPut" placeholder="Hora Fin" formControlName="EndTime">
 	                </div>
 
+	                <ng-select [items]="usuarios" class="custom" bindLabel="fullname" bindValue="username" formControlName="idUser" placeholder="Asignar Usuario">
+					</ng-select>
+
 	                <div class="form-group">
-	                   <button type="button" id="button_agendar" class="btn btn-primary" [disabled]="propertyForm.invalid" (click)="setActividad();">Agendar</button>
+	                   <button type="button" id="button_agendar" class="btn btn-primary" [disabled]="propertyForm.invalid" (click)="setTramites();">Agendar</button>
 	                </div>
               </form>
             </div>
@@ -49,7 +52,7 @@
 
 <ng-template #putContent let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">Editar Actividad</h4>
+        <h4 class="modal-title">Editar Tramite</h4>
 
         <button type="button" class="close" aria-label="Close" (click)="d('Cerrar')">
             <span aria-hidden="true">&times;</span>
@@ -72,7 +75,7 @@
 	                </div>
 
 	                <div class="form-group text-left">
-	                  <label for="fecha">Fecha de Actividad</label>
+	                  <label for="fecha">Fecha del tramite</label>
 	                  <input type="date" class="form-control input-lg" id="fecha" name="" [(ngModel)]="fechaPut">
 	                </div>
 
@@ -86,22 +89,25 @@
 					  <input type="time" class="form-control input-lg" name="" placeholder="Hora Fin" id="horaFin" [(ngModel)]="endTimePut">
 	                </div>
 
+	                <ng-select [items]="usuarios" class="custom" bindLabel="fullname" bindValue="username" placeholder="Asignar Usuario" [(ngModel)]="idUserPut">
+					</ng-select>
+
 	               	<!-- <div class="form-group px-md-2 text-left">
 		            	<ng-select [items]="status" class="custom" bindLabel="nombre" bindValue="nombre" placeholder="Status" [(ngModel)]="estado">
 		            	</ng-select>
 		            </div> -->
 
 	                <div class="form-group">
-	                   <button type="button" id="button_cambiar" class="btn btn-primary" (click)="putActividad(idPut);">Cambiar</button>
+	                   <button type="button" id="button_cambiar" class="btn btn-primary" (click)="putTramites(idPut);">Cambiar</button>
 	                </div>
             </div>
           </div>
     </div>
 </ng-template>
 
-<ng-template #ActivityContent let-c="close" let-d="dismiss">
+<ng-template #TramiteContent let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">{{ activity.nombre }}</h4>
+        <h4 class="modal-title">{{ tramite.nombre }}</h4>
 
         <button type="button" class="close" aria-label="Close" (click)="d('Cerrar')">
             <span aria-hidden="true">&times;</span>
@@ -115,41 +121,41 @@
 
             	<div class="d-flex">
 		        	<p class="col-10 px-0">
-		        		<b *ngIf="activity.status == 'Hecho'" class="bg-success py-2 px-4 rounded-pill text-white"> {{activity.status}}  </b>
-		        		<b *ngIf="activity.status == 'En progreso'" class="bg-warning py-2 px-4 rounded-pill text-white"> {{activity.status}}  </b>
-		        		<b *ngIf="activity.status == 'Archivado'" class="bg-secondary py-2 px-4 rounded-pill text-white"> {{activity.status}}  </b>
+		        		<b *ngIf="tramite.status == 'Hecho'" class="bg-success py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
+		        		<b *ngIf="tramite.status == 'En progreso'" class="bg-warning py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
+		        		<b *ngIf="tramite.status == 'Archivado'" class="bg-secondary py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
 		        	</p>
-			        <a routerLink="/home/activities" *ngIf="activity.status !== 'Archivado'" class="text-secondary col-2" (click)="changeActividad(activity._id, 'Archivado')">
+			        <a routerLink="/home/tramites" *ngIf="tramite.status !== 'Archivado'" class="text-secondary col-2" (click)="changeTramites(tramite._id, 'Archivado')">
 		  				<span class="fa fa-archive fa-1x"></span>
 		            	<b style="font-size: 14px" class="mx-2">Archivar</b>
 	  				</a>
             	</div>
-            	<p><b>Fecha:</b> {{activity.fecha}} </p>
-            	<p><b>Horario:</b> {{activity.startTime}} - {{activity.endTime}}</p>
-            	<p><b>Creado Por:</b> {{activity.createBy}} </p>
-            	<p><b>Ultima Modificación:</b> {{activity.time}} </p>
-            	<p><b>Tipo de Actividad:</b> {{activity.tipo}} </p>
-               	{{ activity.descripcion }}
+            	<p><b>Fecha:</b> {{tramite.fecha}} </p>
+            	<p><b>Horario:</b> {{tramite.startTime}} - {{tramite.endTime}}</p>
+            	<p><b>Creado Por:</b> {{tramite.createBy}} </p>
+            	<p><b>Ultima Modificación:</b> {{tramite.time}} </p>
+            	<p><b>Tipo de Tramite:</b> {{tramite.tipo}} </p>
+               	{{ tramite.descripcion }}
             </div>
           </div>
-          <div class="mt-4 justify-content-center" *ngIf="activity.createBy == this.username || this.role == 'ADMIN'">
+          <div class="mt-4 justify-content-center" *ngIf="tramite.createBy == this.username || this.role == 'ADMIN'">
           		<div class="col-md-12 text-center py-2">
-	  				<a routerLink="/home/activities" (click)="editActivity(putContent, activity._id, activity.nombre, activity.descripcion, activity.tipo, activity.fecha, activity.startTime, activity.endTime, activity.status)" class="mr-1">
+	  				<a routerLink="/home/tramites" (click)="editTramites(putContent, tramite._id, tramite.nombre, tramite.descripcion, tramite.tipo, tramite.fecha, tramite.startTime, tramite.endTime, tramite.status, tramite.idUser)" class="mr-1">
 			            <span class="fa fa-edit fa-1x"></span>
 			            <b style="font-size: 14px" class="mx-2">Editar</b>
 		            </a>
-	  				<a routerLink="/home/activities" style="color: red" (click)="deleteActividad(activity._id)">
+	  				<a routerLink="/home/tramites" style="color: red" (click)="deleteTramites(tramite._id)">
 		  				<span class="fa fa-trash fa-1x"></span>
 		            	<b style="font-size: 14px" class="mx-2">Eliminar</b>
 	  				</a>
   				</div>
 
   				<div class="col-md-12 text-center py-2">
-	  				<a routerLink="/home/activities" *ngIf="activity.status !== 'Hecho'" class="text-success" (click)="changeActividad(activity._id, 'Hecho')">
+	  				<a routerLink="/home/tramites" *ngIf="tramite.status !== 'Hecho'" class="text-success" (click)="changeTramites(tramite._id, 'Hecho')">
 		  				<span class="fa fa-battery-full fa-1x"></span>
 		            	<b style="font-size: 14px" class="mx-2">Completar</b>
 	  				</a>
-	  				<a routerLink="/home/activities" *ngIf="activity.status !== 'En progreso'" class="text-warning" (click)="changeActividad(activity._id, 'En progreso')">
+	  				<a routerLink="/home/tramites" *ngIf="tramite.status !== 'En progreso'" class="text-warning" (click)="changeTramites(tramite._id, 'En progreso')">
 		  				<span class="fa fa-battery-quarter fa-1x"></span>
 		            	<b style="font-size: 14px" class="mx-2">Marcar en progreso</b>
 	  				</a>
@@ -161,16 +167,16 @@
 <div class="container pt-3">
 	<div class="row justify-content-center px-md-5 pb-4 card margin-container">
 
-		<a routerLink="/home/activities" (click)="open(postContent, '', '')" class="icon-add m-4 text-decoration-none">
+		<a routerLink="/home/tramites" (click)="open(postContent, '', '')" class="icon-add m-4 text-decoration-none">
 	        <li class="fa fa-plus-circle" style="font-size: 2em"></li> 
-	        <b style="font-size: 20px;" class="mx-2">Agendar</b>
+	        <b style="font-size: 20px;" class="mx-2">Agendar Solicitud</b>
 	    </a>
 
 	    <div class="d-flex">
-	    	<a routerLink='/home/activities' (click)="moverTipoActividad('')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Todos ({{ cantidadTodos }})</a>
-	    	<a routerLink='/home/activities' (click)="moverTipoActividad('Hecho')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Hechos ({{ cantidadHechos }})</a>
-	    	<a routerLink='/home/activities' (click)="moverTipoActividad('En progreso')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">En progreso ({{ cantidadEnProgreso }})</a>
-	    	<a routerLink='/home/activities' (click)="moverTipoActividad('Archivado')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Archivados ({{ cantidadArchivado }})</a>
+	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Todos ({{ cantidadTodos }})</a>
+	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('Hecho')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Hechos ({{ cantidadHechos }})</a>
+	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('En progreso')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">En progreso ({{ cantidadEnProgreso }})</a>
+	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('Archivado')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Archivados ({{ cantidadArchivado }})</a>
 	    </div>
 
         <table class="table">
@@ -182,14 +188,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let actividad of actividades; let indice=index" class="bloque-actividad" (click)="verActividad(ActivityContent, actividad)">
-	                <th scope="row">{{actividad.nombre}}</th>
-	                <td>{{actividad.descripcion}}</td>
-	                <td>{{actividad.time}}</td>
+            <tr *ngFor="let tramite of tramites; let indice=index" class="bloque-tramites" (click)="verTramites(TramiteContent, tramite)">
+	                <th scope="row">{{tramite.nombre}}</th>
+	                <td>{{tramite.descripcion}}</td>
+	                <td>{{tramite.time}}</td>
             </tr>
             </tbody>
         </table>
 
-        <button class="btn btn-secondary" (click)="masActividades()" *ngIf="actividades.length >= part" style="font-size: 14px">Mas ...</button>
+        <button class="btn btn-secondary" (click)="masTramites()" *ngIf="tramites.length >= part" style="font-size: 14px">Mas ...</button>
     </div>
 </div>
