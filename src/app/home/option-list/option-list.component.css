@@ -4,7 +4,94 @@
 }
 
 .margin-container{
-	margin-top: 10%
+	margin-top: 8%
+}
+
+#post-option{
+  height: 50vh;
+  background-image: url("https://previews.123rf.com/images/vadimgozhda/vadimgozhda1412/vadimgozhda141201624/35457820-c%C3%ADrculo-de-la-confianza-grupo-de-personas-que-est%C3%A1n-sentados-en-c%C3%ADrculo-y-se-apoyan-mutuamente-.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 1px #0096dbab !important;
+  background-position: top;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#post-option:hover {
+  -webkit-transform:scale(0.98);
+  -moz-transform:scale(0.98);
+  -ms-transform:scale(0.98);
+  -o-transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+#activities-option{
+  height: 50vh;
+  background-image: url("http://www.entreperiodistas.com/wp-content/uploads/2019/06/oficina-personas-trabajando-en-computadores.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 1px #0096dbab !important;
+  background-position: top;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#activities-option:hover {
+  -webkit-transform:scale(0.98);
+  -moz-transform:scale(0.98);
+  -ms-transform:scale(0.98);
+  -o-transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+#tasks-option{
+  height: 50vh;
+  background-image: url("https://hablemosdeempresas.com/wp-content/uploads/sites/2/2020/03/lista-tareas-portada.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 1px #0096dbab !important;
+  background-position: top;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#tasks-option:hover {
+  -webkit-transform:scale(0.98);
+  -moz-transform:scale(0.98);
+  -ms-transform:scale(0.98);
+  -o-transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+#profile-option{
+  height: 50vh;
+  background-image: url("https://app-sapumu.sfo2.digitaloceanspaces.com/cihuatlan/user/2021/10/16859/gzMLhSxLqA.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 1px #0096dbab !important;
+  background-position: top;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#profile-option:hover {
+  -webkit-transform:scale(0.98);
+  -moz-transform:scale(0.98);
+  -ms-transform:scale(0.98);
+  -o-transform:scale(0.98);
+  transform:scale(0.98);
+}
+
+.item-background{
+  background: #0096dbab !important;
+  color: white;
+  border: solid 1px #0096dbab !important;
+}
+
+.font-letters-titles{
+  font-size: 1vw;
+  font-family: fantasy;
 }
 
 @media (max-width: 450px){

@@ -1,6 +1,6 @@
-<div class="container p-md-4">
+<div class="p-md-2">
 	<div class="row justify-content-center margin-container">
-			<div class="card col mx-md-1 p-0 my-2">
+<!-- 			<div class="card col-md-3 mx-md-1 p-0 my-2">
 				<a routerLink='/home/post' class="text-decoration-none text-dark">
 					<div class="card-header">
 						<b> Preguntas y Respuestas </b>
@@ -9,9 +9,18 @@
 						<img src="https://image.freepik.com/vector-gratis/dibujado-mano-conjunto-signos-interrogacion-doodle-ilustracion-vector-su-icono-fondo-diseno-papel-tapiz-interrogatorio-estilo-dibujo-dibujos-animados-hace-preguntas-dibujadas-boligrafo-marcador_253081-635.jpg" width="100%">
 					</div>
 				</a>
-			</div>
+			</div> -->
 
-			<div class="card col-md col-12 mx-md-1 p-0 my-2">
+			<div id="post-option" class="card col-md-6 col-12 mx-md-1 p-0 my-2"  
+				routerLink='/home/post'>
+				<a class="text-decoration-none text-dark">
+					<div class="card-header text-center item-background font-letters-titles">
+						PREGUNTAS Y RESPUESTAS
+					</div>
+				</a>
+			</div>
+<!-- 
+			<div class="card col-md-6 col-12 mx-md-1 p-0 my-2">
 				<a routerLink='/home/activities' class="text-decoration-none text-dark">
 					<div class="card-header">
 						<b> Modulo de Actividades </b>
@@ -20,9 +29,18 @@
 						<img src="https://static.vecteezy.com/system/resources/previews/002/503/041/non_2x/flat-agenda-list-clipboard-design-style-cartoon-illustration-drawing-vector.jpg" width="100%">
 					</div>
 				</a>
+			</div> -->
+
+			<div id="activities-option" class="card col-md-3 col-12 mx-md-1 p-0 my-2"  
+				routerLink='/home/activities'>
+				<a class="text-decoration-none text-dark">
+					<div class="card-header text-center item-background font-letters-titles">
+						MODULO DE ACTIVIDADES
+					</div>
+				</a>
 			</div>
 
-			<div class="card col-md col-12 mx-md-1 p-0 my-2">
+<!-- 			<div class="card col-md-6 col-12 mx-md-1 p-0 my-2">
 				<a routerLink='/home/task' class="text-decoration-none text-dark">
 					<div class="card-header">
 						<b> Modulo de Tareas </b>
@@ -31,9 +49,27 @@
 						<img src="https://png.pngtree.com/png-clipart/20190620/original/pngtree-cartoon-exam-test-scene-is-commercially-available-questionsexaminationfinal-periodcome-onwork-png-image_4020498.jpg" width="100%">
 					</div>
 				</a>
+			</div> -->
+
+			<div id="profile-option" class="card col-md-3 col-12 mx-md-1 p-0 my-2"  
+				(click)="Gotoprofile()">
+				<a class="text-decoration-none text-dark">
+					<div class="card-header text-center item-background font-letters-titles">
+						PERFIL
+					</div>
+				</a>
 			</div>
 
-			<div class="card col-md col-12 mx-md-1 p-0 my-2">
+			<div id="tasks-option" class="card col-md-6 col-12 mx-md-1 p-0 my-2"  
+				routerLink='/home/task'>
+				<a class="text-decoration-none text-dark">
+					<div class="card-header text-center item-background font-letters-titles">
+						MODULO DE TAREAS
+					</div>
+				</a>
+			</div>
+
+		<!-- 	<div class="card col-md-3 col-12 mx-md-1 p-0 my-2">
 				<a style="cursor: pointer" (click)="Gotoprofile()" class="text-decoration-none text-dark">
 					<div class="card-header">
 						<b> Perfil </b>
@@ -42,6 +78,6 @@
 						<img src="https://previews.123rf.com/images/fayethequeen/fayethequeen1701/fayethequeen170100007/70761908-avatar-dise%C3%B1o-plano-icono-hombre-mujer-dibujos-animados-cara-personas-persona-perfil-vector-stock.jpg" width="100%">
 					</div>
 				</a>
-			</div>
+			</div> -->
 	</div>
 </div>
