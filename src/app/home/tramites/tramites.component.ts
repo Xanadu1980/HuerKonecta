@@ -312,7 +312,7 @@ export class TramitesComponent implements OnInit {
         Fecha: ['', Validators.required],
         StartTime: ['', Validators.required],
         EndTime: ['', Validators.required],
-        idUser: [null, Validators.required]
+        idUser: [null]
       });
   }
 

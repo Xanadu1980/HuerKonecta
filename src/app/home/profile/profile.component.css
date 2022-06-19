@@ -79,9 +79,13 @@ th{
 	}
 }
 
-@media (max-width: 321px){
+@media (max-width: 769px){
 	.responsive-280{
 		font-size: 18px;
+	}
+
+	.w-responsive{
+		width: 200px!important;
 	}
 
 	.margin-container{

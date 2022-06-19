@@ -120,12 +120,12 @@
             <div class="form-group">
 
             	<div class="d-flex">
-		        	<p class="col-10 px-0">
+		        	<p class="col-8 px-0">
 		        		<b *ngIf="tramite.status == 'Hecho'" class="bg-success py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
 		        		<b *ngIf="tramite.status == 'En progreso'" class="bg-warning py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
 		        		<b *ngIf="tramite.status == 'Archivado'" class="bg-secondary py-2 px-4 rounded-pill text-white"> {{tramite.status}}  </b>
 		        	</p>
-			        <a routerLink="/home/tramites" *ngIf="tramite.status !== 'Archivado'" class="text-secondary col-2" (click)="changeTramites(tramite._id, 'Archivado')">
+			        <a routerLink="/home/tramites" *ngIf="tramite.status !== 'Archivado' && this.role == 'ADMIN'" class="text-secondary col-2" (click)="changeTramites(tramite._id, 'Archivado')">
 		  				<span class="fa fa-archive fa-1x"></span>
 		            	<b style="font-size: 14px" class="mx-2">Archivar</b>
 	  				</a>
@@ -150,10 +150,10 @@
 	  				</a>
   				</div>
 
-  				<div class="col-md-12 text-center py-2">
+  				<div class="col-md-12 text-center py-2" *ngIf="this.role == 'ADMIN'">
 	  				<a routerLink="/home/tramites" *ngIf="tramite.status !== 'Hecho'" class="text-success" (click)="changeTramites(tramite._id, 'Hecho')">
 		  				<span class="fa fa-battery-full fa-1x"></span>
-		            	<b style="font-size: 14px" class="mx-2">Completar</b>
+		            	<b style="font-size: 14px" class="mx-2">Aprobada</b>
 	  				</a>
 	  				<a routerLink="/home/tramites" *ngIf="tramite.status !== 'En progreso'" class="text-warning" (click)="changeTramites(tramite._id, 'En progreso')">
 		  				<span class="fa fa-battery-quarter fa-1x"></span>
@@ -174,7 +174,7 @@
 
 	    <div class="d-flex">
 	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Todos ({{ cantidadTodos }})</a>
-	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('Hecho')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Hechos ({{ cantidadHechos }})</a>
+	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('Hecho')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Aprobados ({{ cantidadHechos }})</a>
 	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('En progreso')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">En progreso ({{ cantidadEnProgreso }})</a>
 	    	<a routerLink='/home/tramites' (click)="moverTipoTramites('Archivado')" class="mx-2 my-1" style="font-size: 14px; color: rgb(69, 130, 187)">Archivados ({{ cantidadArchivado }})</a>
 	    </div>
