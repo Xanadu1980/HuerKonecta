@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../../../environments/environment';
 import { UsersService } from '../../users/users.service';
-import { Partners } from "../../classes/Partners";
+import { Partners } from "../../classes/partners";
 import { isNullOrUndefined } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 import $ from 'jquery';
