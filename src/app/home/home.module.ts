@@ -21,9 +21,10 @@ import { TaskComponent } from './task/task.component';
 import { OptionListComponent } from './option-list/option-list.component';
 import { PartnersComponent } from './partners/partners.component';
 import { TramitesComponent } from './tramites/tramites.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
-  declarations: [HomeComponent, PostComponent, AboutComponent, ContactUsComponent, TeamComponent, ProfileComponent, CommentComponent, ActivityComponent, TaskComponent, OptionListComponent, PartnersComponent, TramitesComponent],
+  declarations: [HomeComponent, PostComponent, AboutComponent, ContactUsComponent, TeamComponent, ProfileComponent, CommentComponent, ActivityComponent, TaskComponent, OptionListComponent, PartnersComponent, TramitesComponent, UsersListComponent],
   imports: [
     CommonModule,
     FormsModule,

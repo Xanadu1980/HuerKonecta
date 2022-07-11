@@ -12,6 +12,7 @@ import { TaskComponent } from './task/task.component';
 import { OptionListComponent } from './option-list/option-list.component';
 import { PartnersComponent } from './partners/partners.component';
 import { TramitesComponent } from './tramites/tramites.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
 	{ path: '', 
@@ -34,6 +35,7 @@ const routes: Routes = [
       { component: ProfileComponent, path: 'myprofile/:username' },
       { component: PartnersComponent, path: 'partners' },
       { component: TramitesComponent, path: 'tramites' },
+      { component: UsersListComponent, path: 'users-list' },
     ]
   },
  ];

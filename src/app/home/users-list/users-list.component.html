@@ -1,0 +1,27 @@
+<div class="container pt-3">
+	<div class="row justify-content-center px-md-5 pb-4 card margin-container">
+
+		<h2>Lista de Usuarios</h2>
+		<hr>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th style="width: 20%">Nombre</th>
+                <th style="width: 20%">Apellido</th>
+                <th style="width: 20%">Usuario</th>
+                <th style="width: 10%">Rol</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let usuario of usuarios; let indice=index" class="bloque-usuario" [routerLink]="['/home/profile', usuario.username]">
+	                <th scope="row">{{usuario.nombre}}</th>
+	                <td>{{usuario.apellido}}</td>
+	                <td>{{usuario.username}}</td>
+	                <td>{{usuario.role}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
